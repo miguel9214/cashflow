@@ -30,7 +30,8 @@ export default {
     amountVisual(){
         return this.amount !== null ? this.amount : this.totalAmount;
 
-    },labelVisual(){
+    },
+    labelVisual(){
          return this.label !== null ? this.label : this.totalLabel;
 
     }
