@@ -5,15 +5,21 @@
         <Header> </Header>
       </template>
       <template #resume>
-        <Resume 
-        :label="label"
-        :totalLabel="totalLabel"
-        :amount="amount"
-        :totalAmount="totalAmount"
-        />
+        <Resume
+          :label="'Ahorro total'"
+          :totalLabel="totalLabel"
+          :amount="amount"
+          :totalAmount="1000000"
+        >
+          <template #graphic> Graphic </template>
+          <template #action> Action </template>
+        </Resume>
       </template>
+
       <template #movements>
-        <Movements />
+        <Movements 
+        :movements="movements"
+        />
       </template>
     </Layout>
   </div>
@@ -21,7 +27,7 @@
 <script>
 import Layout from "@/components/Layout.vue";
 import Header from "@/components/Header.vue";
-import Movements from "@/components/Movements.vue";
+import Movements from "@/components/Movements/Index.vue";
 import Resume from "./Resume/Index.vue";
 export default {
   components: {
@@ -35,13 +41,44 @@ export default {
     return {
       data() {
         return {
-          amount:1000,
-          totalAmount:250000,
-          label:'31 de noviembre',
-          totalLabel:'Ahorro total',
-        }
+          amount: null,
+          label: null,
+          movements: [
+        {
+          id: 1,
+          title: "Movimiento",
+          description: "Deposito de salario",
+          amount: "1000",
+        },
+        {
+          id: 2,
+          title: "Movimiento 1",
+          description: "Deposito de honorarios",
+          amount: "500",
+        },
+        {
+          id: 3,
+          title: "Movimiento 3",
+          description: "Comida",
+          amount: "-100",
+        },
+        {
+          id: 4,
+          title: "Movimiento 4",
+          description: "Colegiatura",
+          amount: "1000",
+        },
+        {
+          id: 5,
+          title: "Movimiento 5",
+          description: "Reparación equipo",
+          amount: "1000",
+        },
+      ],
+
+        };
       },
-    }
+    };
   },
 };
 </script>
