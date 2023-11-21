@@ -60,7 +60,7 @@ export default {
           id: 4,
           title: "Movimiento 4",
           description: "Colegiatura",
-          amount: "1000",
+          amount: "-2000",
         },
         {
           id: 5,

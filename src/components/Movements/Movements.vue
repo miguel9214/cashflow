@@ -6,18 +6,20 @@
         </div>
         <div class="action">
             <img src="@/assets/eliminar.svg" alt="borrar" @click="remove">
-            <p>{{ amountCurrency }}</p>
+            <p :class="{'red':isNegative,'green':!isNegative}">{{ amountCurrency }}</p>
         </div>
     </div>
 </template>
 
 <script setup>
-import { toRefs, defineProps, computed } from 'vue';
+import { toRefs, defineProps, defineEmits, computed } from 'vue';
 
 const currencyFormatter = new Intl.NumberFormat("es-CO", {
     style: "currency",
     currency: "COP"
 });
+const isNegative =computed(()=>amount.value<0);
+
 const props = defineProps({
     id: {
         type: Number,
@@ -34,12 +36,14 @@ const props = defineProps({
 });
 const { id,title,description,amount } = toRefs(props);
 
+const emit = defineEmits(["remove"]);
+
 const amountCurrency = computed(()=>currencyFormatter.format(amount.value));
 
 
 
 const remove = ()=>{
-    console.log(id.value);
+    emit("remove",id.value)
 }
 
 </script>

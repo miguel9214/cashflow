@@ -1,7 +1,7 @@
 <template>
     <div class="splashscreen">
         <img src="@/assets/logo.svg" alt="logo">
-        <h1><span>Cash</span>Flow</h1>
+        <h1><span>Track</span>Cash</h1>
     </div>
 </template>
 

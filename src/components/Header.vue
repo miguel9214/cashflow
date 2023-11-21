@@ -3,7 +3,7 @@
         <img 
         @click="reload()"
         src="@/assets/logo.svg" alt="logo">
-        <h1><span>Cash</span>Flow</h1>
+        <h1><span>Track</span>Cash</h1>
         <span></span>
     </header>
 </template>
