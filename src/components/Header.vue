@@ -1,6 +1,6 @@
 <template lang="">
     <header>
-        <img 
+        <img class="logoHeader"
         @click="reload()"
         src="@/assets/logo.svg" alt="logo">
         <h1><span>Track</span>Cash</h1>
@@ -27,7 +27,7 @@ header{
   width: 100vw;
 
 }
-img,span{
+.logoHeader, span{
     width: 48px;
 }
 
