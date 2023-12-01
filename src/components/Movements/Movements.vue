@@ -42,7 +42,7 @@ const amountCurrency = computed(()=>currencyFormatter.format(amount.value));
 
 
 
-const remove = ()=>{
+const remove = (id)=>{
     emit("remove",id.value)
 }
 
