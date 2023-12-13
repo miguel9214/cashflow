@@ -11,7 +11,9 @@
           :amount="amount"
           :totalAmount="1000000"
         >
-          <template #graphic> <Graphic :amounts="amounts"/> </template>
+          <template #graphic> 
+            <Graphic :amounts="amounts"/> 
+          </template>
           <template #action> 
             <Action/> 
           </template>
