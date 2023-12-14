@@ -34,17 +34,27 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineEmits} from "vue";
 import Modal from "./Modal.vue";
 
 const showModal = ref(false);
 const title = ref("");
 const amount = ref(0);
 const descripcion = ref("");
-const movementType = "Ingreso";
+const movementType = ref("Ingreso");
+
+const emit = defineEmits(["create"]);
 
 const submit = () => {
   showModal.value = !showModal.value;
+  emit("create",{
+    title:title.value,
+    amount: movementType.value==="Ingreso"?amount.value:-amount.value,
+    descripcion:descripcion.value,
+    time: new Date(),
+    id: new Date(),
+  
+  })
 };
 </script>
 
