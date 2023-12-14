@@ -9,7 +9,7 @@
           :label="'Ahorro total'"
           :totalLabel="totalLabel"
           :amount="amount"
-          :totalAmount="1000000"
+          :totalAmount="totalAmount"
         >
           <template #graphic>
             <Graphic :amounts="amounts" />
@@ -47,41 +47,41 @@ export default {
       label: null,
       amounts: [100, 200, 500, 200, -400, -600, -300, 0, 300, 500],
       movements: [
-        {
-          id: 1,
-          title: "Movimiento 1",
-          description: "Deposito de salario",
-          amount: 100,
-          time: new Date("14-12-2023"),
-        },
-        {
-          id: 2,
-          title: "Movimiento 2",
-          description: "Deposito de honorarios",
-          amount: 500,
-          time: new Date("14-12-2023"),
-        },
-        {
-          id: 3,
-          title: "Movimiento 3",
-          description: "Comida",
-          amount: -100,
-          time: new Date("14-12-2023"),
-        },
-        {
-          id: 4,
-          title: "Movimiento 4",
-          description: "Colegiatura",
-          amount: -200,
-          time: new Date("14-12-2023"),
-        },
-        {
-          id: 5,
-          title: "Movimiento 5",
-          description: "Reparación equipo",
-          amount: 100,
-          time: new Date("14-12-2023"),
-        },
+        // {
+        //   id: 1,
+        //   title: "Movimiento 1",
+        //   description: "Deposito de salario",
+        //   amount: 100,
+        //   time: new Date("14-12-2023"),
+        // },
+        // {
+        //   id: 2,
+        //   title: "Movimiento 2",
+        //   description: "Deposito de honorarios",
+        //   amount: 500,
+        //   time: new Date("14-12-2023"),
+        // },
+        // {
+        //   id: 3,
+        //   title: "Movimiento 3",
+        //   description: "Comida",
+        //   amount: -100,
+        //   time: new Date("14-12-2023"),
+        // },
+        // {
+        //   id: 4,
+        //   title: "Movimiento 4",
+        //   description: "Colegiatura",
+        //   amount: -200,
+        //   time: new Date("14-12-2023"),
+        // },
+        // {
+        //   id: 5,
+        //   title: "Movimiento 5",
+        //   description: "Reparación equipo",
+        //   amount: 100,
+        //   time: new Date("14-12-2023"),
+        // },
       ],
     };
   },
