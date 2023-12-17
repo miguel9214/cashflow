@@ -3,63 +3,51 @@
     <p>{{ labelVisual }}</p>
     <h1>{{ amountCurrency }}</h1>
     <div class="graphic">
-      <slot name="graphic">
-
-      </slot>
+      <slot name="graphic"></slot>
     </div>
-
     <div class="action">
       <slot name="action"></slot>
-
     </div>
   </main>
 </template>
+
 <script>
-
-const currencyFormatter = new Intl.NumberFormat("es-CO", {
-    style: "currency",
-    currency: "COP"
+const currencyFormatter = new Intl.NumberFormat("es-MX", {
+  style: "currency",
+  currency: "MXN",
 });
-
-
 
 export default {
   props: {
+    totalLabel: {
+      type: String,
+    },
     label: {
       type: String,
-      default:null,
+      default: null,
     },
-    totalLabel:{
-        type:String,
-        
+    totalAmount: {
+      type: Number,
     },
     amount: {
       type: Number,
-      default:null,
+      default: null,
     },
-    totalAmount:{
-        type:Number,
-        
-    },
-
   },
-
-  computed:{
-    amountVisual(){
-        return this.amount !== null ? this.amount : this.totalAmount;
-
+  computed: {
+    labelVisual() {
+      return this.label !== null ? this.label : this.totalLabel;
     },
-    labelVisual(){
-         return this.label !== null ? this.label : this.totalLabel;
-
-    },amountCurrency(){
-      return currencyFormatter.format(this.amountVisual); 
-    }
-
-
+    amountVisual() {
+      return this.amount !== null ? this.amount : this.totalAmount;
+    },
+    amountCurrency() {
+      return currencyFormatter.format(this.amountVisual);
+    },
   },
 };
 </script>
+
 <style scoped>
 main {
   display: flex;
@@ -68,15 +56,18 @@ main {
   flex-direction: column;
   width: 100%;
 }
+
 h1,
 p {
   margin: 0;
   text-align: center;
 }
+
 h1 {
   margin-top: 14px;
   color: var(--brand-green);
 }
+
 .graphic {
   display: flex;
   justify-content: center;

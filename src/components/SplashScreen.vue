@@ -1,11 +1,11 @@
 <template>
-    <div class="splashscreen">
-        <img src="@/assets/logo.svg" alt="logo">
-        <h1><span>Track</span>Cash</h1>
-    </div>
+  <div class="splashscreen">
+    <img src="@/assets/logo.svg" alt="Logo" />
+    <h1><span>Track</span>Cash</h1>
+  </div>
 </template>
 
-<style>
+<style scoped>
 .splashscreen {
   display: flex;
   justify-content: center;
@@ -19,5 +19,4 @@ h1 {
 h1 span {
   color: var(--brand-green);
 }
-    
 </style>

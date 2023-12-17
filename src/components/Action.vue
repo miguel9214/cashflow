@@ -1,19 +1,19 @@
 <template>
-  <button @click="showModal = true">Agregar un moviemiento</button>
+  <button @click="showModal = true">Agregar movimiento</button>
   <teleport to="#app">
     <Modal v-show="showModal" @close="showModal = false">
       <form @submit.prevent="submit">
         <div class="field">
-          <label>Titulo</label>
+          <label>Título</label>
           <input type="text" v-model="title" />
         </div>
         <div class="field">
           <label>Monto</label>
-          <input type="text" v-model="amount" />
+          <input type="number" v-model="amount" />
         </div>
         <div class="field">
-          <label>Descripcion</label>
-          <textarea row="4" type="text" v-model="descripcion"></textarea>
+          <label>Descripción</label>
+          <textarea rows="4" v-model="description"></textarea>
         </div>
         <div class="field">
           <label class="radio-label">
@@ -34,30 +34,30 @@
 </template>
 
 <script setup>
-import { ref, defineEmits} from "vue";
+import { ref, defineEmits } from "vue";
 import Modal from "./Modal.vue";
 
 const showModal = ref(false);
 const title = ref("");
 const amount = ref(0);
-const descripcion = ref("");
+const description = ref("");
 const movementType = ref("Ingreso");
 
 const emit = defineEmits(["create"]);
 
 const submit = () => {
   showModal.value = !showModal.value;
-  emit("create",{
-    title:title.value,
-    amount: movementType.value==="Ingreso"?amount.value:-amount.value,
-    descripcion:descripcion.value,
+  emit("create", {
+    title: title.value,
+    description: description.value,
+    amount: movementType.value === "Ingreso" ? amount.value : -amount.value,
     time: new Date(),
     id: new Date(),
   });
-  title.value="";
-  descripcion.value="";
-  amount.value=0;
-  movementType.value="Ingreso";
+  title.value = "";
+  description.value = "";
+  amount.value = 0;
+  movementType.value = "Ingreso";
 };
 </script>
 
